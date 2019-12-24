@@ -57,4 +57,14 @@ public class UserRegistrationTest {
     public void whenGivenMobileNumber_withCountryCode_followedBySpace_notExactTenNumber_shouldReturnFalse() {
         Assert.assertFalse(UserRegistration.checkMobileNumber("91 902999206322"));
     }
+
+    @Test
+    public void whenGivenPassword_with8Length_shouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkPassword("Santosh@123"));
+    }
+
+    @Test
+    public void whenGivenPassword_lengthLessThan8_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkPassword("Santosh"));
+    }
 }
