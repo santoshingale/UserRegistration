@@ -65,6 +65,16 @@ public class UserRegistrationTest {
 
     @Test
     public void whenGivenPassword_lengthLessThan8_shouldReturnFalse() {
-        Assert.assertFalse(UserRegistration.checkPassword("Santosh"));
+        Assert.assertFalse(UserRegistration.checkPassword("santosh"));
+    }
+
+    @Test
+    public void whenGivenPassword_with8Length_withOneUpperCase_shouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkPassword("SantoSsh123"));
+    }
+
+    @Test
+    public void whenGivenPassword_with8Length_withoutOneUpperCase_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkPassword("santosh@123"));
     }
 }
