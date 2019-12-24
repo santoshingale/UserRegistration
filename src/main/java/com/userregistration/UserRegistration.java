@@ -18,4 +18,11 @@ public class UserRegistration {
         boolean b = m.matches();
         return b;
     }
+
+    public static boolean checkEmail(String email) {
+        Pattern lastNamePattern = Pattern.compile("^[a-zA-Z0-9]{1,}[._+-]?[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}([.][a-zA-Z]{2,3}){1,2}$");
+        Matcher m = lastNamePattern.matcher(email);
+        boolean b = m.matches();
+        return b;
+    }
 }

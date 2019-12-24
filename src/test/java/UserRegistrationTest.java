@@ -33,4 +33,8 @@ public class UserRegistrationTest {
         Assert.assertFalse(UserRegistration.checkLastName("ingale"));
     }
 
+    @Test
+    public void whenGivenEmailAddress_withProperFormat_shouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkEmail("santosingale@gmail.com.in"));
+    }
 }
