@@ -19,9 +19,16 @@ public class UserRegistration {
         return b;
     }
 
-    public static boolean checkEmail(String email) {
+    public static boolean checkEmailAddress(String email) {
         Pattern lastNamePattern = Pattern.compile("^[a-zA-Z0-9]{1,}[._+-]?[a-zA-Z0-9]{1,}@[a-zA-Z0-9]{1,}([.][a-zA-Z]{2,3}){1,2}$");
         Matcher m = lastNamePattern.matcher(email);
+        boolean b = m.matches();
+        return b;
+    }
+
+    public static boolean checkMobileNumber(String phoneNumber) {
+        Pattern lastNamePattern = Pattern.compile("^[0-9]{1,3}[ ]{1}[0-9]{10}$");
+        Matcher m = lastNamePattern.matcher(phoneNumber);
         boolean b = m.matches();
         return b;
     }

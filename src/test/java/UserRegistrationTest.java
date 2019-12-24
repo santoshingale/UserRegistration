@@ -35,6 +35,26 @@ public class UserRegistrationTest {
 
     @Test
     public void whenGivenEmailAddress_withProperFormat_shouldReturnTrue() {
-        Assert.assertTrue(UserRegistration.checkEmail("santosingale@gmail.com.in"));
+        Assert.assertTrue(UserRegistration.checkEmailAddress("santosingale@gmail.com.in"));
+    }
+
+    @Test
+    public void whenGivenMobileNumber_withCountryCode_followedBySpace_tenDigitNumber_shouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkMobileNumber("91 9029992063"));
+    }
+
+    @Test
+    public void whenGivenMobileNumber_withoutCountry_Code_followedBySpace_tenDigitNumber_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkMobileNumber("9029992063"));
+    }
+
+    @Test
+    public void whenGivenMobileNumber_withCountryCode_notFollowedBySpace_tenDigitNumber_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkMobileNumber("919029992063"));
+    }
+
+    @Test
+    public void whenGivenMobileNumber_withCountryCode_followedBySpace_notExactTenNumber_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkMobileNumber("91 902999206322"));
     }
 }
