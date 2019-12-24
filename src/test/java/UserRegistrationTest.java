@@ -77,4 +77,14 @@ public class UserRegistrationTest {
     public void whenGivenPassword_with8Length_withoutOneUpperCase_shouldReturnFalse() {
         Assert.assertFalse(UserRegistration.checkPassword("santosh@123"));
     }
+
+    @Test
+    public void whenGivenPassword_with8Length_withOneUpperCase_withAtleastOneNumber_shouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkPassword("SantoSshjd1"));
+    }
+
+    @Test
+    public void whenGivenPassword_with8Length_withOneUpperCase_withoutNumber_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkPassword("SantoSshjd"));
+    }
 }
