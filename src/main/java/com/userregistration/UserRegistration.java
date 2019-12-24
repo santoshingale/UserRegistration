@@ -11,4 +11,11 @@ public class UserRegistration {
         boolean b = m.matches();
         return b;
     }
+
+    public static boolean checkLastName(String lastName) {
+        Pattern lastNamePattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+        Matcher m = lastNamePattern.matcher(lastName);
+        boolean b = m.matches();
+        return b;
+    }
 }
