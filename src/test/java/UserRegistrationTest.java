@@ -70,7 +70,7 @@ public class UserRegistrationTest {
 
     @Test
     public void whenGivenPassword_with8Length_withOneUpperCase_shouldReturnTrue() {
-        Assert.assertTrue(UserRegistration.checkPassword("SantoSsh123"));
+        Assert.assertTrue(UserRegistration.checkPassword("SantoSsh@123"));
     }
 
     @Test
@@ -80,11 +80,17 @@ public class UserRegistrationTest {
 
     @Test
     public void whenGivenPassword_with8Length_withOneUpperCase_withAtleastOneNumber_shouldReturnTrue() {
-        Assert.assertTrue(UserRegistration.checkPassword("SantoSshjd1"));
+        Assert.assertTrue(UserRegistration.checkPassword("SantoSsh@jd1"));
     }
 
     @Test
     public void whenGivenPassword_with8Length_withOneUpperCase_withoutNumber_shouldReturnFalse() {
-        Assert.assertFalse(UserRegistration.checkPassword("SantoSshjd"));
+        Assert.assertFalse(UserRegistration.checkPassword("SantoSs@hjd"));
     }
+
+    @Test
+    public void whenGivenPassword_with8Length_withOneUpperCase_withAtleastOneNumber_withOneSpecialSymbolshouldReturnTrue() {
+        Assert.assertTrue(UserRegistration.checkPassword("SantoSsh@jd1"));
+    }
+
 }

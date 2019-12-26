@@ -34,7 +34,7 @@ public class UserRegistration {
     }
 
     public static boolean checkPassword(String password) {
-        Pattern passwordRegex = Pattern.compile("^(?=.*[A-Z])(?=.*[0-1])(?=.*[a-zA-Z0-9#$^+=!*()@%&]).{8,}$");
+        Pattern passwordRegex = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[#$^+=!*()@%&]).{8,}$");
         Matcher m = passwordRegex.matcher(password);
         boolean b = m.matches();
         return b;
