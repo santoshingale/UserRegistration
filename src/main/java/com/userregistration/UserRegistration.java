@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 
     public static boolean checkFirstName(String firstName) {
-        Pattern firstNamePattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+        Pattern firstNamePattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         Matcher m = firstNamePattern.matcher(firstName);
         boolean b = m.matches();
         return b;
     }
 
     public static boolean checkLastName(String lastName) {
-        Pattern lastNamePattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+        Pattern lastNamePattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         Matcher m = lastNamePattern.matcher(lastName);
         boolean b = m.matches();
         return b;

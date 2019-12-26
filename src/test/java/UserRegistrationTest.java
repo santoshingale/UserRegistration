@@ -19,6 +19,11 @@ public class UserRegistrationTest {
     }
 
     @Test
+    public void whenGivenFistName_withThreeOrMoreCharacter_withFirstCapitalLetter_withNumbers_shouldReturnFalse() {
+        Assert.assertFalse(UserRegistration.checkFirstName("santosh12"));
+    }
+
+    @Test
     public void whenGivenLastName_withThreeOrMoreCharacter_withFirstCapitalLetter_shouldReturnTrue() {
         Assert.assertTrue(UserRegistration.checkLastName("Ingale"));
     }
